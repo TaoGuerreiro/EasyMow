@@ -8,23 +8,22 @@ class TractorsController < ApplicationController
     @tractor = Tractor.find(params[:id])
   end
 
-  def new
-    @tractor = Tractor.new
-  end
+  # def new
+  #   @tractor = Tractor.new
+  # end
 
-  def create
-    @tractor = Tractor.new(tractor_params)
-    if @restaurant.save
-      redirect_to tractor_path(@tractor)
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @tractor = Tractor.new(tractor_params)
+  #   if @restaurant.save
+  #     redirect_to tractor_path(@tractor)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   private
 
-  def restaurant_params
+  def tractor_params
     params.require(:tractor).permit(:photo, :title, :descritpion, :price_per_day)
   end
-
 end
