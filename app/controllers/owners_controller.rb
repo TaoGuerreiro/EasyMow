@@ -9,11 +9,6 @@ class OwnersController < ApplicationController
     @booking.status = false
   end
 
-  def index
-
-  end
-
-
   private
 
   def find_booking
