@@ -1,5 +1,7 @@
 <h1>All tractor</h1>
 
 <% @tractors.each do |tractor| %>
-<%= tractor.title %>
+<%= link_to tractor.title, tractor_path(tractor) %>
 <% end %>
+
+<%=  link_to 'home', root_path %>
