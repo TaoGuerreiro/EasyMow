@@ -23,7 +23,7 @@ class TractorsController < ApplicationController
 
   private
 
-  def tractor_params
-    params.require(:tractor).permit(:photo, :title, :descritpion, :price_per_day)
-  end
+  # def tractor_params
+  #   params.require(:tractor).permit(:photo, :title, :descritpion, :price_per_day)
+  # end
 end
