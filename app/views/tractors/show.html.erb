@@ -2,4 +2,4 @@
 <%#= image_path("@tractor.photo") %>
 <%= link_to 'back on tractors index', tractors_path %>
 
-<%#= link_to , new_booking_path(@tractor) %>
+<%= cl_image_tag @tractor.photo.key, height: 300, width: 400, crop: :fill %>

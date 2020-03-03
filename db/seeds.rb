@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+
 puts "Cleaning table..."
-User.destroy_all
-Tractor.destroy_all
 Booking.destroy_all
+Tractor.destroy_all
+User.destroy_all
 puts "Coucou les copains"
 
 puts "......................Creating 10 users......................."
@@ -51,104 +53,97 @@ puts ".....................let's created some tractors...................."
 
 users = User.all
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor1.jpg')),
-  title: "Masse Fergusson",
-  description: "Joli tracteurs",
+tractor1 = Tractor.create!(
+  title: "Tuning Tractor",
+  description: "beautiful red tractor",
   price_per_day: 165,
   user_id: users.sample.id
-  }
 )
+photo1 = File.open(Rails.root.join('db/fixtures/tractors/Tractor1.jpg'))
+tractor1.photo.attach(io: photo1, filename: 'masse_fergusson.jpg', content_type: 'image/jpg')
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor2.jpg')),
-  title: "Renault",
-  description: "Tracteur rouge",
+
+tractor2 = Tractor.create!(
+  title: "Fenwick",
+  description: "Robust and red!",
   price_per_day: 125,
   user_id: users.sample.id
-  }
 )
+photo2 = File.open(Rails.root.join('db/fixtures/tractors/Tractor2.jpg'))
+tractor2.photo.attach(io: photo2, filename: 'racer.jpg', content_type: 'image/jpg')
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor3.jpg')),
-  title: "Kubota",
-  description: "Old school",
-  price_per_day: 80,
+tractor3 = Tractor.create!(
+  title: "John Deer",
+  description: "The ultime mowing-tractor of John Deer",
+  price_per_day: 300,
   user_id: users.sample.id
-  }
 )
+photo3 = File.open(Rails.root.join('db/fixtures/tractors/Tractor3.jpg'))
+tractor3.photo.attach(io: photo3, filename: 'john_deer.jpg', content_type: 'image/jpg')
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor4.jpg')),
-  title: "Stihl",
-  description: "Vitesse de folie",
+
+tractor4 = Tractor.create!(
+  title: "DIY Mowing-tractor",
+  description: "Really good for legs",
+  price_per_day: 70,
+  user_id: users.sample.id
+)
+photo4 = File.open(Rails.root.join('db/fixtures/tractors/Tractor4.jpg'))
+tractor4.photo.attach(io: photo4, filename: 'diy.jpg', content_type: 'image/jpg')
+
+tractor5 = Tractor.create!(
+    title: "Massey Assasin",
+  description: "Beautiful black truck",
+  price_per_day: 250,
+  user_id: users.sample.id
+  )
+photo5 = File.open(Rails.root.join('db/fixtures/tractors/Tractor5.jpg'))
+tractor5.photo.attach(io: photo5, filename: 'masse_assasin.jpg', content_type: 'image/jpg')
+
+tractor6 = Tractor.create!(
+  title: "Robotic mowing-tractor",
+  description: "Perfect for lazy gardenner",
   price_per_day: 200,
   user_id: users.sample.id
-  }
 )
+photo6 = File.open(Rails.root.join('db/fixtures/tractors/Tractor6.jpg'))
+tractor6.photo.attach(io: photo6, filename: 'robot.jpg', content_type: 'image/jpg')
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor5.jpg')),
-  title: "Honda",
-  description: "Entrée de gamme",
-  price_per_day: 110,
+tractor7 = Tractor.create!(
+    title: "Huqsvana",
+  description: "Good tractor for big garden",
+  price_per_day: 160,
   user_id: users.sample.id
-  }
-)
+  )
+photo7 = File.open(Rails.root.join('db/fixtures/tractors/Tractor7.jpg'))
+tractor7.photo.attach(io: photo7, filename: 'husqvana.jpg', content_type: 'image/jpg')
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor6.jpg')),
-  title: "diy",
-  description: "Fait mains",
-  price_per_day: 50,
+tractor8 = Tractor.create!(
+  title: "Green Tractor",
+  description: "the must Ecologic mowing-tractor",
+  price_per_day: 100,
   user_id: users.sample.id
-  }
 )
+photo8 = File.open(Rails.root.join('db/fixtures/tractors/Tractor8.jpg'))
+tractor8.photo.attach(io: photo8, filename: 'ecologic.jpg', content_type: 'image/jpg')
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor7.jpg')),
-  title: "Ecologique",
-  description: "La tondeuse la plus écologique",
-  price_per_day: 60,
+tractor9 = Tractor.create!(
+  title: "Bernard",
+  description: "Old and perfect tractor",
+  price_per_day: 90,
   user_id: users.sample.id
-  }
 )
+photo9 = File.open(Rails.root.join('db/fixtures/tractors/Tractor9.jpg'))
+tractor9.photo.attach(io: photo9, filename: 'bernard.jpg', content_type: 'image/jpg')
 
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor8.jpg')),
-  title: "Compétition",
-  description: "Parfait pour les tracteurs tondeuses cross",
-  price_per_day: 200,
+tractor10 = Tractor.create!(
+  title: "Racer",
+  description: "Perfect for win race",
+  price_per_day: 125,
   user_id: users.sample.id
-  }
 )
-
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor9.jpg')),
-  title: "Honda",
-  description: "Entrée de gamme",
-  price_per_day: 110,
-  user_id: users.sample.id
-  }
-)
-Tractor.create!(
-  {
-  photo: File.open(Rails.root.join('db/fixtures/tractors/tractor10.jpg')),
-  title: "Honda",
-  description: "Entrée de gamme",
-  price_per_day: 110,
-  user_id: users.sample.id
-  }
-)
+photo10 = File.open(Rails.root.join('db/fixtures/tractors/Tractor10.jpg'))
+tractor10.photo.attach(io: photo10, filename: 'racer.jpg', content_type: 'image/jpg')
 
 
 puts 'done'
