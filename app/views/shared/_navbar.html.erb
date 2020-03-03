@@ -1,4 +1,5 @@
-<div id="nav" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% navbar_bg_class = params[:controller] == 'pages' && params[:action] == 'home' ? '' : 'bg-light'  %>
+<div id="nav" class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= navbar_bg_class %> ">
   <div class="d-flex justify-content-start">
     <%= link_to root_path,  class: "navbar-brand" do %>
       <%= image_tag "https://www.nicepng.com/png/full/119-1198588_grass-fed-standards-grass-icon-vector-png.png" %>

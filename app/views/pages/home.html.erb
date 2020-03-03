@@ -1,5 +1,9 @@
 <%= render 'shared/banner' %>
 
+<%= content_for(:after_application_pack) do %>
+  <%= javascript_pack_tag 'home' %>
+<% end %>
+
 
 
 <div class="container">
