@@ -1,4 +1,41 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/banner' %>
 
-<%= link_to 'All tractors for rent', tractors_path %>
+
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+    <div class="col">
+      <div class="shadow rounded p-3 mt-5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id amet quo quasi, perspiciatis inventore iure dolore fugit, obcaecati aspernatur molestiae, labore laudantium dolorem tempore nobis, in aperiam quae explicabo odit. </p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="shadow rounded mb-5">
+        <div class="images rounded" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "map.png" %>);">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row row-cols-1">
+    <div class="col">
+      <div class="cta d-flex justify-content-center p-5 ">
+        <%= link_to 'All tractors for rent', tractors_path %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+    <div class="col">
+      <div class="shadow rounded mb-5">
+        <div class="images rounded" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "home-young-woman.jpg" %>);">
+      </div>
+    </div>
+    <div class="col">
+      <div class="shadow rounded p-3 mt-5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id amet quo quasi, perspiciatis inventore iure dolore fugit, obcaecati aspernatur molestiae, labore laudantium dolorem tempore nobis, in aperiam quae explicabo odit. </p>
+      </div>
+    </div>
+  </div>
+</div>
