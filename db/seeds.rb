@@ -52,7 +52,7 @@ users = User.all
 
 Tractor.create!(
   {
-  photo: "https://static.megavert.fr/44317-large_default/sxe218he105-tracteur-tondeuse-autoportee-iseki-bac-arriere.jpg",
+  photo:  "https://media.paruvendu.fr/image/tracteur-tondeuse-kubota/WB16/1/8/WB161808331_1.jpeg",
   title: "Masse Fergusson",
   description: "Joli tracteurs",
   price_per_day: 165,
