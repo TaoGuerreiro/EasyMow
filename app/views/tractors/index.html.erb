@@ -1,7 +1,20 @@
+
+
+
+
+<div class="container pt-5">
 <h1>All tractor</h1>
-
-<% @tractors.each do |tractor| %>
-<%= link_to tractor.title, tractor_path(tractor) %>
-<% end %>
-
-<%=  link_to 'home', root_path %>
+    <div class="row">
+  <% @tractors.each do |tractor| %>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="shadow mb-4 rounded">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('<%= tractor_photo_path(tractor) %>')">
+            <h2> <%=   tractor.title %></h2>
+            <p> <%= tractor.description %></p>
+            <%= link_to "Book-it", tractor_path(tractor), class: 'btn btn-flat' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
