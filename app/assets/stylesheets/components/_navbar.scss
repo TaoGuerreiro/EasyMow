@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   position: fixed;
+  top: 0px;
   width: 100%;
   // background: white;
   z-index: 10;
@@ -12,4 +13,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.index-body {
+  margin-top: 45px;
+  position: relative;
 }
