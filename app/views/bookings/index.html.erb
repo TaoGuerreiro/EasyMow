@@ -1,6 +1,17 @@
 
 
-<% @bookings.each do |booking| %>
-<p> <%= booking.user.email %></p>
-<p> <%= booking.tractor.title %></p>
-<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4">
+
+      <% @bookings.each do |booking| %>
+      <p> <%= booking.user.email %></p>
+      <p> <%= booking.tractor.title %></p>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
