@@ -1,4 +1,5 @@
-<!-- RENTER INDEX OF ALL BOOKING  -->
+<!-- OWNER INDEX OF ALL BOOKING  -->
+
 
 
 <div class="index-bookings-body">
@@ -8,7 +9,7 @@
         <div class="history">
           <% @bookings.each do |booking| %>
             <div class="my-locs p-3 shadow rounded d-flex align-middle">
-              <p> <%= booking.tractor.title %> rent from <%= booking.starting_date  %> to <%= booking.starting_date %> to <%= booking.tractor.user.email %> </p>
+              <p> You rent your <%= booking.tractor.title %> from <%= booking.starting_date  %> to <%= booking.starting_date %> to <%= booking.user.email %> </p>
             </div>
           <% end %>
         </div>
@@ -16,3 +17,4 @@
     </div>
   </div>
 </div>
+
