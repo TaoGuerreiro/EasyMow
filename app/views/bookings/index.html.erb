@@ -1,18 +1,24 @@
 <!-- RENTER INDEX OF ALL BOOKING  -->
 
 
-<div class="index-bookings-body">
-  <div class="abs">
-    <div class="container">
-      <div class="d-flex justify-content-center">
-        <div class="history">
+  <div class="index-bookings-body">
+    <div class="abs">
+      <div class="">
+        <div class="d-flex justify-content-center">
           <% @bookings.each do |booking| %>
-            <div class="my-locs p-3 shadow rounded d-flex align-middle">
-              <p> <%= booking.tractor.title %> rent from <%= booking.starting_date  %> to <%= booking.starting_date %> to <%= booking.tractor.user.email %> </p>
+            <div class="my-loc d-flex p-2 m-3 shadow rounded align-middle">
+                <%= link_to booking.tractor, class: "booking-link" do %>
+                  <%= cl_image_tag booking.tractor.photo.key, height: 200, width: 200, crop: :fill %>
+                <% end %>
+                <div class="description-booking p-2">
+                  <h4> <%= booking.tractor.title %></h4>
+                  <p>from <%= booking.starting_date.strftime("%d.%m.%Y")  %> to <%= booking.ending_date.strftime("%d.%m.%Y")  %></p>
+                  <p>for <%= booking.total_price%>€</p>
+                </div>
+              </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
