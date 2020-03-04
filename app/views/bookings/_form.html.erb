@@ -1,16 +1,15 @@
 <%= simple_form_for [@tractor, @booking] do |f| %>
-  <div class="form-group inline mx-auto jus pl-3" style="width: 500px;">
+  <div class="form-group d-flex mx-auto jus pl-3" style="width: 500px;">
     <label for="example-datetime-local-input" class="col-2 col-form-label"></label>
     <div class="col-10">
       <%= f.input :starting_date, class: 'form-control', type: 'datetime', value: '2011-08-19T13:45:00' %>
       <!-- <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input"> -->
     </div>
   </div>
-  <div class="form-group inline mx-auto pl-3" style="width: 500px;">
+  <div class="form-group d-flex mx-auto pl-3" style="width: 500px;">
     <label for="example-date-input" class="col-2 col-form-label"></label>
     <div class="col-10 container-btn">
       <%= f.input :ending_date, class: 'form-control', type: 'date', value: '2011-08-19' %>
-      <!-- <input class="form-control" type="date" value="2011-08-19" id="example-date-input"> -->
       <%= f.button :submit, 'Book', class: 'btn btn-success btn-position' %>
     </div>
   </div>
