@@ -12,7 +12,7 @@
   }
   h2{
     font-weight: 300;
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
   }
 }
@@ -32,15 +32,19 @@
 
 .price{
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  bottom: 218px;
-  right: 4px;
-  color: white;
+  bottom: 210px;
+  background-color: #61aa17;
+  right: 5px;
+  width: 100px;
+  height: 30px;
+  color: black;
+  border-radius: 5px;
   text-align: center;
   font-weight: bold;
   font-size: 35px;
-  transition: .2s;
 }
 
 .image-cards{
@@ -73,10 +77,6 @@
 }
 
 .card:hover .title{
-  display: none;
-}
-
-.card:hover .price{
   display: none;
 }
 
