@@ -1,5 +1,34 @@
-<h1>Tractor <%= @tractor.title %></h1>
-<%#= image_path("@tractor.photo") %>
-<%= link_to 'back on tractors index', tractors_path %>
 
-<%= cl_image_tag @tractor.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container pt-5 ">
+  <h1>Book your mowing tractor</h1>
+
+  <div class="shadow rounded m-3">
+    <div class="d-flex card-tractor border-bottom align-items-center">
+      <div class="picture-tractor w-50">
+        <%= cl_image_tag @tractor.photo.key, height: 400, width: 550, crop: :fill %>
+      </div>
+      <div class="booking-form w-50 ">  <%= render 'bookings/form' %>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <div class="description">
+      <div class="">
+        <div class="p-3">
+          <h2><%=@tractor.title  %></h2>
+          <p><%= @tractor.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="p-3 ">
+        <div class="avatar p-2 bd-highlight">
+          <%= cl_image_tag @tractor.photo.key, height: 50, width: 50, crop: :fill, class: 'image rounded-circle' %>
+        </div>
+        <h5 class=""><%= @tractor.price_per_day %> € / per day</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
