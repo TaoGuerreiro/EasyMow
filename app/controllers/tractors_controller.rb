@@ -7,7 +7,6 @@ class TractorsController < ApplicationController
   def show
     @tractor = Tractor.find(params[:id])
     @booking = Booking.new
-
   end
 
   def new
