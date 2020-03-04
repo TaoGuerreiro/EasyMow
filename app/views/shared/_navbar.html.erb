@@ -16,10 +16,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "All our tractors", tractors_path, class: "nav-link text-info" %>
+          <%= link_to "All our tractors", tractors_path, class: "nav-link text-success" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My rentals", bookings_path, class: "nav-link text-info" %>
+          <%= link_to "My rentals", bookings_path, class: "nav-link text-success" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -31,7 +31,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link text-info" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link text-success" %>
         </li>
       <% end %>
     </ul>
