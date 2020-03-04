@@ -12,9 +12,8 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     @booking.tractor = Tractor.find(params[:tractor_id])
     @booking.total_price = ((@booking.ending_date - @booking.starting_date).to_i * @booking.tractor.price_per_day)
-
-
     @booking.save!
+    redirect_to bookings_path
   end
 
 
