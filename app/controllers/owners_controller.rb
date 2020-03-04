@@ -14,3 +14,4 @@ class OwnersController < ApplicationController
   def find_booking
     @booking = Booking.find(params[:booking_id])
   end
+end
