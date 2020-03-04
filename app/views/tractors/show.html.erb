@@ -1,10 +1,11 @@
 
 <div class="show-body">
-  <div class="container mt-5 ">
+  <div class="container mt-5">
     <h1>Book your mowing tractor</h1>
     <div class="tractor-show">
       <div class="shadow rounded m-3">
-        <div class="card-tractor d-flex border-bottom align-items-center">
+        <div class="card-tractor d-flex border-bottom align-items-center position-relative">
+          <%= link_to "Back", tractors_path, class: "btn btn-success btn-back" %>
           <div class="picture-tractor w-50">
             <%= cl_image_tag @tractor.photo.key, height: 400, width: 550, crop: :fill %>
           </div>
