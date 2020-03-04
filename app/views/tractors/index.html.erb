@@ -6,25 +6,26 @@
         <% @tractors.each do |tractor| %>
         <div class="col-12 col-sm-6 col-md-4">
           <div class="rounded">
-            <div class="card m-5">
-              <div class="image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%= tractor_photo_path(tractor) %>')">
-                <div class="title">
-                  <h1> <%= tractor.title %></h1>
-                </div>
-                <div class="price">
-                  <h2><%= tractor.price_per_day %>€</h2>
-                </div>
-                <div class="info">
-                  <div class="price-title">
+            <%= link_to tractor do  %>
+              <div class="card m-5">
+                <div class="image-cards" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%= tractor_photo_path(tractor) %>')">
+                  <div class="title">
                     <h1> <%= tractor.title %></h1>
-                    <%= link_to "", tractor_path(tractor)%>
+                  </div>
+                  <div class="price">
                     <h2><%= tractor.price_per_day %>€</h2>
                   </div>
-                  <div class="description">
-                    <p><%= tractor.description %></p>
+                  <div class="info">
+                    <div class="price-title">
+                      <h1> <%= tractor.title %></h1>
+                      <h2><%= tractor.price_per_day %>€</h2>
+                    </div>
+                    <div class="description">
+                      <p><%= tractor.description %></p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             </div>
           </div>
         </div>
