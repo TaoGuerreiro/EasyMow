@@ -17,6 +17,8 @@ puts "......................Creating 10 users......................."
 
 User.create!(
   {
+    firstname: 'antoine'
+    lastname: 'martin'
     email: 'antoine.martin@gmail.com',
     password: 'secret'
   }
@@ -24,6 +26,8 @@ User.create!(
 
 User.create!(
   {
+    firstname: 'julie'
+    lastname: 'laurent'
     email: 'julie.laurent@gmail.com',
     password: 'secret'
   }
@@ -31,18 +35,24 @@ User.create!(
 
 User.create!(
   {
+    firstname: 'edouard'
+    lastname: 'lopez'
     email: 'edouart.lopez@gmail.com',
     password: 'secret'
   }
 )
 User.create!(
   {
+    firstname: 'sarah'
+    lastname: 'lee'
     email: 'sarah.lee@gmail.com',
     password: 'secret'
   }
 )
 User.create!(
   {
+    firstname: 'pauline'
+    lastname: 'riou'
     email: 'pauline.riou@gmail.com',
     password: 'secret'
   }
