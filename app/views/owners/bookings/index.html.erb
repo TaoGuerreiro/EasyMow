@@ -1,0 +1,14 @@
+<!-- OWNER INDEX OF ALL BOOKING  -->
+
+
+
+<div class="index-bookings-body">
+  <div class="container">
+    <% @bookings.each do |booking| %>
+      <div class="my-locs">
+        <p> You rent your <%= booking.tractor.title %> from <%= booking.starting_date  %> to <%= booking.starting_date %> to <%= booking.user.email %> </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+

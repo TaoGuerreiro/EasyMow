@@ -1,13 +1,16 @@
-
-<div class="container">
-<% @bookings.each do |booking| %>
-  <div class="row">
-    <div class="col-6 col-md-4">
-      <p> <%= booking.user.email %></p>
-      <p> <%= booking.tractor.title %></p>
+<!-- RENTER INDEX OF ALL BOOKING  -->
 
 
-    </div>
+
+<div class="index-bookings-body">
+  <div class="container">
+    <% @bookings.each do |booking| %>
+      <div class="my-locs">
+        <p> <%= booking.tractor.title %> rent from <%= booking.starting_date  %> to <%= booking.starting_date %> </p>
+        <p> <%= booking.tractor.user.email %></p>
+      </div>
+    <% end %>
   </div>
-      <% end %>
 </div>
+
+
