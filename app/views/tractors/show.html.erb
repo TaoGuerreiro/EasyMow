@@ -1,34 +1,61 @@
+<div class="container">
 
-<div class="show-body">
-  <div class="container mt-5">
-    <h1>Book your mowing tractor</h1>
-    <div class="tractor-show">
-      <div class="shadow rounded m-3">
-        <div class="card-tractor d-flex border-bottom align-items-center position-relative">
-          <%= link_to "Back", tractors_path, class: "btn btn-success btn-back" %>
-          <div class="picture-tractor w-50">
-            <%= cl_image_tag @tractor.photo.key, height: 400, width: 550, crop: :fill %>
-          </div>
-          <div class="booking-form">  <%= render 'bookings/form' %>
-        </div>
+  <%= link_to "Back", tractors_path, class: "btn btn-outline-success btn-back" %>
+<div class="show-body shadow">
+  <div class="top-show d-flex justify-content-between">
+    <h2><%=@tractor.title  %></h2>
+    <h5 class=""><%= @tractor.price_per_day %> € /day</h5>
+  </div>
+
+  <div class="middle-show">
+    <div class="card-tractor d-flex border align-items-center position-relative">
+      <div class="picture-tractor">
+        <%= cl_image_tag @tractor.photo.key,  crop: :fill, class: 'show-tractor-image'%>
       </div>
-      <div class="bottom-show px-2">
-        <div class="d-flex justify-content-between">
-          <div class="description">
-            <div class="p-3">
-              <h2><%=@tractor.title  %></h2>
-              <p><%= @tractor.description %></p>
+      <div class="booking-form">
+        <%= render 'bookings/form' %>
+    </div>
+  </div>
+
+    <div class="bottom-show d-flex justify-content-between p-3">
+      <div>
+        <p class="px-2"><%= @tractor.description %></p>
+        <div class="icons-show">
+          <div class="aera-icons d-flex">
+            <p class="pr-3">Aera/hour</p>
+            <div class="leaf-icon">
+              <% case @tractor.speed
+                   when 1 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf "></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                <% when 2 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active "></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                <% when 3 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                <% when 4 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i></p>
+                <% when 5 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i></p>
+              <% end %>
             </div>
           </div>
-            <div class="avatar-owner p-3 ">
-              <div class="pb-2">
-                <%= cl_image_tag @tractor.photo.key, height: 50, width: 50, crop: :fill, class: 'image-owner rounded-circle' %>
-              </div>
-              <h5 class=""><%= @tractor.price_per_day %> € / per day</h5>
+          <div class="consumption-icons d-flex">
+            <p class="pr-3 ">Consumption</p>
+            <div class="pump-icon px-2 ">
+             <% case @tractor.consumption
+                    when 1 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                 <% when 2 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active "></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                 <% when 3 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                 <% when 4 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i></p>
+                 <% when 5 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i></p>
+               <% end %>
             </div>
           </div>
         </div>
       </div>
+      <div class="avatar-owner p-2">
+        <div class="">
+          <%= cl_image_tag @tractor.user.avatar.key, height: 50, width: 50, crop: :fill, class: 'image-owner rounded-circle' %>
+        </div>
+        <div class="owner-first-name pt-2">
+          <%= @tractor.user.firstname %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
