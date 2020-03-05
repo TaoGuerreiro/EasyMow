@@ -13,10 +13,10 @@
                 <div class="row d-flex align-items-center justify-content-between">
 
                   <div class="col-md-auto d-flex ">
-                    <%= cl_image_tag booking.tractor.photo.key, width: 60, height: 60, crop: :fill, class: 'rounded-circle align-self-center' %>
+                    <%= cl_image_tag booking.user.avatar.key, width: 60, height: 60, crop: :fill, class: 'rounded-circle align-self-center' %>
                   </div>
 
-                  <div class="col d-flex flex-column mt-3">
+                  <div class="col d-flex flex-column">
                     <%= booking.user.firstname %>
                     <%= booking.user.lastname %>
                   </div>
@@ -33,12 +33,12 @@
                   <div class="col col-md-2">
                     <div class="text-center ">
                       <% if booking.status == 'true' %>
-                        <h3><span class="badge badge-success">Accepted</span></h3>
+                        <h3><span class="status"><i class="fas fa-check"></i> Accepted</span></h3>
                       <% elsif booking.status == 'false' %>
-                        <h3><span class="badge badge-danger">Refused</span></h3>
+                        <h3><span class="status"><i class="fas fa-times"></i> Refused</span></h3>
                       <% else %>
                         <%= link_to "Accept", accept_owners_booking_path(booking), method: 'patch', class: 'btn btn-success btn-sm' %>
-                        <%= link_to "Refuse", refuse_owners_booking_path(booking), method: 'patch', class: 'btn btn-success btn-sm'  %>
+                        <%= link_to "Refuse", refuse_owners_booking_path(booking), method: 'patch', class: 'btn btn-danger btn-sm'  %>
                       <% end %>
                     </div>
                   </div>
