@@ -4,7 +4,7 @@
     <%= link_to root_path,  class: "navbar-brand" do %>
       <%= image_tag "https://www.nicepng.com/png/full/119-1198588_grass-fed-standards-grass-icon-vector-png.png" %>
     <% end %>
-    <h1 class=" text-success">vroom::BnB</h1>
+    <h1 class="target text-light">vroom::BnB</h1>
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,10 +16,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "All our tractors", tractors_path, class: "nav-link text-success" %>
+          <%= link_to "All our tractors", tractors_path, class: "target nav-link text-light" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My rentals", bookings_path, class: "nav-link text-success" %>
+          <%= link_to "My rentals", bookings_path, class: "target nav-link text-light" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://media-exp1.licdn.com/dms/image/C4D03AQH6fLqgyYXFTQ/profile-displayphoto-shrink_200_200/0?e=1585785600&v=beta&t=wuEKQPKCgSPZzfOVUW0hPudqQLq7diL6ijgtt5dHA6g", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
