@@ -2,7 +2,14 @@ class Owners::BookingsController < ApplicationController
     before_action :find_booking, only: [:accept, :refuse]
 
   def index
-    @bookings = current_user.bookings
+    # @bookings = []
+    # current_user.tractors.each do |tractor|
+    #   @bookings << tractor.bookings
+    # end
+    # @bookings.flatten!
+
+
+    @bookings = Booking.includes(tractor: :user).where(tractors: { user: current_user })
   end
 
   def accept

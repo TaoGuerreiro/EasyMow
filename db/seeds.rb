@@ -32,7 +32,7 @@ user2 = User.create!(
     password: 'secret',
     address: "24 Avenue Chanzy, Nantes" ,
 )
-avatar2 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar2 = File.open(Rails.root.join('db/fixtures/users_avatars/julie.jpg'))
 user2.avatar.attach(io: avatar2, filename: 'julie.jpg', content_type: 'image/jpg')
 
 
@@ -43,7 +43,7 @@ user3 = User.create!(
     password: 'secret',
     address: "3 Passage Louis Lévesque, Nantes",
 )
-avatar3 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar3 = File.open(Rails.root.join('db/fixtures/users_avatars/edouard.jpg'))
 user3.avatar.attach(io: avatar3, filename: 'edouard.jpg', content_type: 'image/jpg')
 
 
@@ -54,7 +54,7 @@ user4 = User.create!(
     password: 'secret',
     address: "41 Rue la Tour d'Auvergne, Nantes",
 )
-avatar4 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar4 = File.open(Rails.root.join('db/fixtures/users_avatars/sarah.jpg'))
 user4.avatar.attach(io: avatar4, filename: 'sarah.jpg', content_type: 'image/jpg')
 
 user5 = User.create!(
@@ -64,7 +64,7 @@ user5 = User.create!(
     password: 'secret',
     address: "11 Place Alfred Radigois, Nantes",
 )
-avatar5 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar5 = File.open(Rails.root.join('db/fixtures/users_avatars/pauline.jpg'))
 user5.avatar.attach(io: avatar5, filename: 'pauline.jpg', content_type: 'image/jpg')
 
 puts 'done'
@@ -76,7 +76,7 @@ tractor1 = Tractor.create!(
   title: "Tuning Tractor",
   description: "beautiful red tractor",
   price_per_day: 165,
-  user_id: users.sample.id,
+  user_id: User.first.id,
   consumption: rand(1..5),
   speed: rand(1..5)
 )
@@ -88,7 +88,7 @@ tractor2 = Tractor.create!(
   title: "Fenwick",
   description: "Robust and red!",
   price_per_day: 125,
-  user_id: users.sample.id,
+  user_id: users.first.id,
   consumption: rand(1..5),
   speed: rand(1..5)
 )
@@ -99,7 +99,7 @@ tractor3 = Tractor.create!(
   title: "John Deer",
   description: "The ultime mowing-tractor of John Deer",
   price_per_day: 300,
-  user_id: users.sample.id,
+  user_id: users.last.id,
   consumption: rand(1..5),
   speed: rand(1..5)
 )
@@ -111,7 +111,7 @@ tractor4 = Tractor.create!(
   title: "DIY Mowing-tractor",
   description: "Really good for legs",
   price_per_day: 70,
-  user_id: users.sample.id,
+  user_id: users.last.id,
   consumption: rand(1..5),
   speed: rand(1..5)
 )
@@ -122,7 +122,7 @@ tractor5 = Tractor.create!(
     title: "Massey Assasin",
   description: "Beautiful black truck",
   price_per_day: 250,
-  user_id: users.sample.id,
+  user_id: users.first.id,
   consumption: rand(1..5),
   speed: rand(1..5)
   )
@@ -189,24 +189,41 @@ puts 'done'
 puts "...................let's created some bookings..................."
 
 tractors = Tractor.all
+users = User.all
+starting_date = Date.parse("20-03-2020")
+ending_date = Date.parse("23-03-2020")
+
 tractor = tractors.sample
+user = users.sample
+if tractor.user.id == user.id
+  user.id +=1
+  Booking.create!(
+    {
+      status: "pending",
+      user_id: users.sample.id,
+      tractor_id: tractor.id,
+      starting_date: starting_date,
+      ending_date: ending_date,
+      total_price: (ending_date - starting_date).to_i * tractor.price_per_day
+    }
+  )
+else
+    Booking.create!(
+    {
+      status: "pending",
+      user_id: users.sample.id,
+      tractor_id: tractor.id,
+      starting_date: starting_date,
+      ending_date: ending_date,
+      total_price: (ending_date - starting_date).to_i * tractor.price_per_day
+    }
+  )
+end
+
 starting_date = Date.parse("20-03-2020")
 ending_date = Date.parse("23-03-2020")
 
-Booking.create!(
-  {
-    status: "pending",
-    user_id: users.sample.id,
-    tractor_id: tractor.id,
-    starting_date: starting_date,
-    ending_date: ending_date,
-    total_price: (ending_date - starting_date).to_i * tractor.price_per_day
-  }
-)
-
-starting_date = Date.parse("20-03-2020")
-ending_date = Date.parse("23-03-2020")
-
+tractor = tractors.sample
 Booking.create!(
   {
     status: "pending",
@@ -221,6 +238,7 @@ Booking.create!(
 starting_date = Date.parse("10-04-2020")
 ending_date = Date.parse("23-04-2020")
 
+tractor = tractors.sample
 Booking.create!(
   {
     status: "pending",
@@ -235,6 +253,7 @@ Booking.create!(
 starting_date = Date.parse("24-05-2020")
 ending_date = Date.parse("30-05-2020")
 
+tractor = tractors.sample
 Booking.create!(
   {
     status: "pending",
@@ -249,11 +268,12 @@ Booking.create!(
 starting_date = Date.parse("20-03-2020")
 ending_date = Date.parse("23-03-2020")
 
+tractor = tractors.sample
 Booking.create!(
   {
     status: "pending",
-    user_id: users.sample.id,
-    tractor_id: tractor.id,
+    user_id: User.last.id,
+    tractor_id: Tractor.first.id,
     starting_date: starting_date,
     ending_date: ending_date,
     total_price: (ending_date - starting_date).to_i * tractor.price_per_day
