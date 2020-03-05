@@ -21,35 +21,16 @@
 
 @import  url(https://fonts.googleapis.com/css?family=Montserrat);
 
-<<<<<<< HEAD
 $width: 15px;
 $height: 15px;
 
 $bounce_height: 30px;
 
-=======
-// ボールのサイズ
 $width: 15px;
 $height: 15px;
 
-// バウンドの距離
 $bounce_height: 30px;
 
-body {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  font-family: Montserrat;
-}
-
-.wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
->>>>>>> 7b4a0e239328026f52d18a3730971e9602a8806e
 .text-pending {
   color: black;
   display: inline-block;
