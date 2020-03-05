@@ -1,30 +1,51 @@
+<div class="container">
 
+  <%= link_to "Back", tractors_path, class: "btn btn-outline-success btn-back" %>
 <div class="show-body">
-  <div class="container mt-5">
-    <h1>Book your mowing tractor</h1>
-    <div class="tractor-show">
-      <div class="shadow rounded m-3">
-        <div class="card-tractor d-flex border-bottom align-items-center position-relative">
-          <%= link_to "Back", tractors_path, class: "btn btn-success btn-back" %>
-          <div class="picture-tractor w-50">
-            <%= cl_image_tag @tractor.photo.key, height: 400, width: 550, crop: :fill %>
+    <div class="show-card shadow">
+
+      <div class="title-show  rounded">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex p-3">
+              <div class="description">
+                <h2><%=@tractor.title  %></h2>
+                <p><%= @tractor.description %></p>
+              </div>
+              <div class="icons-show p-3">
+                <div class="leaf-icon">
+                  <i class="fas fa-leaf"></i>
+                  <i class="fas fa-leaf"></i>
+                  <i class="fas fa-leaf"></i>
+                  <i class="fas fa-leaf"></i>
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <div class="pump-icon">
+                  <i class="fas fa-gas-pump"></i>
+                  <i class="fas fa-gas-pump"></i>
+                  <i class="fas fa-gas-pump"></i>
+                  <i class="fas fa-gas-pump"></i>
+                  <i class="fas fa-gas-pump"></i>
+                </div>
+
+
+              </div>
+            </div>
+              <div class="avatar-owner p-3 ">
+                <div class="p-2">
+                  <%= cl_image_tag @tractor.photo.key, height: 50, width: 50, crop: :fill, class: 'image-owner rounded-circle' %>
+                </div>
+                <h5 class=""><%= @tractor.price_per_day %> € /day</h5>
           </div>
-          <div class="booking-form">  <%= render 'bookings/form' %>
-        </div>
-      </div>
-      <div class="bottom-show px-2">
-        <div class="d-flex justify-content-between">
-          <div class="description">
-            <div class="p-3">
-              <h2><%=@tractor.title  %></h2>
-              <p><%= @tractor.description %></p>
+              </div>
             </div>
           </div>
-            <div class="avatar-owner p-3 ">
-              <div class="pb-2">
-                <%= cl_image_tag @tractor.photo.key, height: 50, width: 50, crop: :fill, class: 'image-owner rounded-circle' %>
+
+          <div class="tractor-show">
+            <div class="card-tractor d-flex border-top align-items-center position-relative">
+              <div class="picture-tractor w-50">
+                <%= cl_image_tag @tractor.photo.key, height: 400, width: 550, crop: :fill %>
               </div>
-              <h5 class=""><%= @tractor.price_per_day %> € / per day</h5>
+              <div class="booking-form">  <%= render 'bookings/form' %>
             </div>
           </div>
         </div>
