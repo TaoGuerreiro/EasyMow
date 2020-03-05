@@ -2,6 +2,15 @@ class TractorsController < ApplicationController
 
   def index
     @tractors = Tractor.all
+
+    # @flats = Flat.geocoded #returns flats with coordinates
+
+        # @markers = @tractors.user.map do |flat|
+        #   {
+        #     lat: flat.latitude,
+        #     lng: flat.longitude
+        #   }
+        # end
   end
 
   def show
