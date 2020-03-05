@@ -1,16 +1,17 @@
 class TractorsController < ApplicationController
 
   def index
-    @tractors = Tractor.all
+    @tractors = Tractor.geocoded
 
-    # @flats = Flat.geocoded #returns flats with coordinates
 
-        # @markers = @tractors.user.map do |flat|
-        #   {
-        #     lat: flat.latitude,
-        #     lng: flat.longitude
-        #   }
-        # end
+    @markers = @tractors.map do |tractor|
+      {
+        lat: tractor.latitude,
+        lng: tractor.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { tractor: tractor }),
+        image_url: helpers.asset_url('feuille.png')
+      }
+    end
   end
 
   def show

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_155046) do
+ActiveRecord::Schema.define(version: 2020_03_05_183705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 2020_03_05_155046) do
     t.bigint "user_id"
     t.integer "consumption"
     t.integer "speed"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_tractors_on_user_id"
   end
 
