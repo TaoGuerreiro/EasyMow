@@ -32,7 +32,7 @@ user2 = User.create!(
     password: 'secret',
     address: "24 Avenue Chanzy, Nantes" ,
 )
-avatar2 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar2 = File.open(Rails.root.join('db/fixtures/users_avatars/julie.jpg'))
 user2.avatar.attach(io: avatar2, filename: 'julie.jpg', content_type: 'image/jpg')
 
 
@@ -43,7 +43,7 @@ user3 = User.create!(
     password: 'secret',
     address: "3 Passage Louis Lévesque, Nantes",
 )
-avatar3 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar3 = File.open(Rails.root.join('db/fixtures/users_avatars/edouard.jpg'))
 user3.avatar.attach(io: avatar3, filename: 'edouard.jpg', content_type: 'image/jpg')
 
 
@@ -54,7 +54,7 @@ user4 = User.create!(
     password: 'secret',
     address: "41 Rue la Tour d'Auvergne, Nantes",
 )
-avatar4 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar4 = File.open(Rails.root.join('db/fixtures/users_avatars/sarah.jpg'))
 user4.avatar.attach(io: avatar4, filename: 'sarah.jpg', content_type: 'image/jpg')
 
 user5 = User.create!(
@@ -64,7 +64,7 @@ user5 = User.create!(
     password: 'secret',
     address: "11 Place Alfred Radigois, Nantes",
 )
-avatar5 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+avatar5 = File.open(Rails.root.join('db/fixtures/users_avatars/pauline.jpg'))
 user5.avatar.attach(io: avatar5, filename: 'pauline.jpg', content_type: 'image/jpg')
 
 puts 'done'
