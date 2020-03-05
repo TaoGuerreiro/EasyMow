@@ -1,7 +1,7 @@
 
 <div class="index-body">
   <div class="container">
-  <h1 class='pt-5' >All tractor</h1>
+  <h1 class='pt-5 text-center' >All tractors</h1>
       <div class="row">
         <% @tractors.each do |tractor| %>
         <div class="col-12 col-sm-6 col-md-4">
@@ -17,20 +17,20 @@
                   </div>
                   <div class="info">
                     <div class="description">
-                      <p><%= tractor.description %></p>
+                      <h3><%= tractor.description %></h3>
                         <% case tractor.consumption
-                             when 1 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i></p>
-                          <% when 2 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump "></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i></p>
-                          <% when 3 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i></p>
-                          <% when 4 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump non-active"></i></p>
-                          <% when 5 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                             when 1 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                          <% when 2 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump "></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                          <% when 3 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                          <% when 4 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i></p>
+                          <% when 5 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i></p>
                         <% end %>
                         <% case tractor.speed
-                             when 1 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i></p>
-                          <% when 2 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf "></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i></p>
-                          <% when 3 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i></p>
-                          <% when 4 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf non-active"></i></p>
-                          <% when 5 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                             when 1 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                          <% when 2 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf "></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                          <% when 3 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                          <% when 4 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i></p>
+                          <% when 5 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i></p>
                         <% end %>
                     </div>
                   </div>
