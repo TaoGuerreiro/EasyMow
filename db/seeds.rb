@@ -195,7 +195,7 @@ ending_date = Date.parse("23-03-2020")
 
 Booking.create!(
   {
-    status: "true",
+    status: "pending",
     user_id: users.sample.id,
     tractor_id: tractor.id,
     starting_date: starting_date,
@@ -209,7 +209,7 @@ ending_date = Date.parse("23-03-2020")
 
 Booking.create!(
   {
-    status: "true",
+    status: "pending",
     user_id: users.sample.id,
     tractor_id: tractor.id,
     starting_date: starting_date,
@@ -223,7 +223,7 @@ ending_date = Date.parse("23-04-2020")
 
 Booking.create!(
   {
-    status: "true",
+    status: "pending",
     user_id: users.sample.id,
     tractor_id: tractor.id,
     starting_date: starting_date,
@@ -251,7 +251,7 @@ ending_date = Date.parse("23-03-2020")
 
 Booking.create!(
   {
-    status: "false",
+    status: "pending",
     user_id: users.sample.id,
     tractor_id: tractor.id,
     starting_date: starting_date,
