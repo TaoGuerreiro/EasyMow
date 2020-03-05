@@ -14,7 +14,11 @@
                   <h4> <%= booking.tractor.title %></h4>
                   <div class="d-flex details-rental justify-content-between">
                     <div class="duration-date">
-                      <p>from <%= booking.starting_date.strftime("%d.%m.%Y")  %> to <%= booking.ending_date.strftime("%d.%m.%Y")  %></p>
+                      <p>From <%= booking.starting_date.strftime("%d.%m.%Y")  %>
+                        <i class="fas fa-chevron-circle-right ml-2"></i>
+                        <i class="fas fa-chevron-circle-right mr-2"></i>
+                        <%= booking.ending_date.strftime("%d.%m.%Y")  %>
+                      </p>
                     </div>
                     <div class="price-statut-rental d-flex justify-content-between">
                       <div class="rental-statut d-flex align-items-center">
