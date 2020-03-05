@@ -1,16 +1,10 @@
-<%= simple_form_for [@tractor, @booking] do |f| %>
-  <div class="form-group">
-    <label for="example-datetime-local-input"></label>
-    <div class="">
-      <%= f.input :starting_date, class: 'form-control', type: 'datetime', value: '2011-08-19T13:45:00' %>
-      <!-- <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input"> -->
-    </div>
+
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto; align-content: center;">
+    <%= simple_form_for [@tractor, @booking], method: "post" do |f| %>
+      <%= f.input :starting_date, as: :string, required: false, input_html: {id: "range_start"} %>
+      <%= f.input :ending_date, as: :string, required: false, input_html: {id: "range_end"} %>
+      <%= f.button :submit, "Book Now", class: "btn btn-success btn-position" %>
+    <% end %>
   </div>
-  <div class="">
-    <label for="example-date-input"></label>
-    <div class="">
-      <%= f.input :ending_date, class: 'form-control', type: 'date', value: '2011-08-19' %>
-      <%= f.button :submit, 'Book', class: 'btn btn-success btn-position' %>
-    </div>
-  </div>
-<% end %>
+</div>
