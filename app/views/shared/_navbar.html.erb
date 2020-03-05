@@ -24,7 +24,7 @@
           <%= link_to "My rentals", bookings_path, class: "target nav-link #{navbar_text_class}" %>
         </li>
         <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.avatar.key, width: 60, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.avatar.key, crop: :scale, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My ads", owners_bookings_path, class: "dropdown-item" %>
             <%= link_to "My tractors", owners_tractors_path, class: "dropdown-item" %>
