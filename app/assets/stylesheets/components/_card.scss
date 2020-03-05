@@ -62,10 +62,14 @@
   text-align: center;
   position: absolute;
   width: 300px;
-  bottom: -110px;
+  bottom: -130px;
   background-color: rgba(0,0,0,0.2);
   transition: 0.3s;
   padding: 5px;
+  p{
+    width: 100%;
+    height: auto;
+  }
 }
 
 .card:hover .info{
@@ -76,13 +80,6 @@
 
 .card:hover .title{
   display: none;
-}
-
-.price-title{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
 }
 
 .my-loc {

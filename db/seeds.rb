@@ -22,9 +22,7 @@ user1 = User.create!(
     password: 'secret',
     address: "44 Rue de la Tullaye, Nantes",
 )
-p user1
 avatar1 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
-p avatar1
 user1.avatar.attach(io: avatar1, filename: 'antoine.jpg', content_type: 'image/jpg')
 
 user2 = User.create!(
