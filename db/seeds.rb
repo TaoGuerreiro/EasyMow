@@ -15,48 +15,59 @@ puts "Coucou les copains"
 
 puts "......................Creating 10 users......................."
 
-User.create!(
-  {
+user1 = User.create!(
     firstname: 'Antoine',
     lastname: 'Martin',
     email: 'antoine.martin@gmail.com',
-    password: 'secret'
-  }
+    password: 'secret',
+    address: "44 Rue de la Tullaye, Nantes",
 )
+p user1
+avatar1 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+p avatar1
+user1.avatar.attach(io: avatar1, filename: 'antoine.jpg', content_type: 'image/jpg')
 
-User.create!(
-  {
+user2 = User.create!(
     firstname: 'Julie',
     lastname: 'Laurent',
     email: 'julie.laurent@gmail.com',
-    password: 'secret'
-  }
+    password: 'secret',
+    address: "24 Avenue Chanzy, Nantes" ,
 )
+avatar2 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+user2.avatar.attach(io: avatar2, filename: 'julie.jpg', content_type: 'image/jpg')
 
-User.create!(
-  {
+
+user3 = User.create!(
     firstname: 'Edouard',
     lastname: 'Lopez',
     email: 'edouart.lopez@gmail.com',
-    password: 'secret'
-  }
+    password: 'secret',
+    address: "3 Passage Louis Lévesque, Nantes",
 )
-User.create!(
-  {
+avatar3 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+user3.avatar.attach(io: avatar3, filename: 'edouard.jpg', content_type: 'image/jpg')
+
+
+user4 = User.create!(
     firstname: 'Sarah',
     lastname: 'Lee',
     email: 'sarah.lee@gmail.com',
-    password: 'secret'
-  }
+    password: 'secret',
+    address: "41 Rue la Tour d'Auvergne, Nantes",
 )
-User.create!(
-  {
+avatar4 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+user4.avatar.attach(io: avatar4, filename: 'sarah.jpg', content_type: 'image/jpg')
+
+user5 = User.create!(
     firstname: 'Pauline',
     lastname: 'Riou',
     email: 'pauline.riou@gmail.com',
-    password: 'secret'
-  }
+    password: 'secret',
+    address: "11 Place Alfred Radigois, Nantes",
 )
+avatar5 = File.open(Rails.root.join('db/fixtures/users_avatars/antoine.jpg'))
+user5.avatar.attach(io: avatar5, filename: 'pauline.jpg', content_type: 'image/jpg')
 
 puts 'done'
 puts ".....................let's created some tractors...................."
@@ -208,7 +219,7 @@ ending_date = Date.parse("30-05-2020")
 
 Booking.create!(
   {
-    status: "true",
+    status: "pending",
     user_id: users.sample.id,
     tractor_id: tractor.id,
     starting_date: starting_date,
