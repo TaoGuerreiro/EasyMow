@@ -16,11 +16,22 @@
                     <h2><%= tractor.price_per_day %>€</h2>
                   </div>
                   <div class="info">
-                    <div class="price-title">
-                      <h1> <%= tractor.title %></h1>
-                    </div>
                     <div class="description">
                       <p><%= tractor.description %></p>
+                        <% case tractor.consumption
+                             when 1 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i></p>
+                          <% when 2 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump "></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i></p>
+                          <% when 3 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump non-active"></i><i class="fas fa-gas-pump non-active"></i></p>
+                          <% when 4 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump non-active"></i></p>
+                          <% when 5 %><p><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                        <% end %>
+                        <% case tractor.speed
+                             when 1 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i></p>
+                          <% when 2 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf "></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i></p>
+                          <% when 3 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf non-active"></i><i class="fas fa-leaf non-active"></i></p>
+                          <% when 4 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf non-active"></i></p>
+                          <% when 5 %><p><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                        <% end %>
                     </div>
                   </div>
                 </div>
