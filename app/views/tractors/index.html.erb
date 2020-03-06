@@ -42,7 +42,7 @@
                     <!-- END --  TRACTORS -- DESCRIPTION -->
                   </div>
                 </div>
-                  <% end %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -53,7 +53,8 @@
 
       <!-- START -- MAP -- COLUMN -->
       <div class="col-12 col-sm-4 col-md-4">
-        <div class="map mt-5 d-flex justify-content-center">
+        <div class="map-container">
+        <div class="mt-5 d-flex justify-content-center">
           <div
           class="rounded shadow-sm"
           id="map"
@@ -62,6 +63,7 @@
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           ></div>
+        </div>
         </div>
       </div>
       <!-- END -- MAP -- COLUMN -->
