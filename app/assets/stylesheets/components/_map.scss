@@ -1,14 +1,23 @@
-.map {
+.map-container {
   height: 100vh;
   width: 100%;
   // background-color: red;
   position: -webkit-sticky;
   position: sticky;
   top: 70px;
+  margin: 0px;
+  padding:0px;
+  &:hover {
+  }
+  a {
+  text-decoration: none;
+  color: black;
+  }
 }
 
 .mapboxgl-popup {
   max-width: 200px;
+
 }
 
 .mapboxgl-popup-content {
