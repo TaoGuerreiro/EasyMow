@@ -1,4 +1,43 @@
+<div class="d-flex justify-content-center user-booking-container">
+  <% @tractors.each do |tractor|  %>
+  <div class="my-loc d-flex p-2 m-3 shadow rounded align-middle">
+    <%= link_to tractor, class: "booking-link" do  %>
+    <%= cl_image_tag tractor.photo.key, height: 200, width: 200, crop: :fill  %>
+    <% end %>
+    <div class="booking-info px-2">
+      <div class="description-booking">
+        <h4> <%= tractor.title %></h4>
+      </div>
+      <div class="price-statut-rental d-flex justify-content-between">
+        <div class="rental-statut pt-3 px-2 align-items-center">
+         <div class="leaf-icon d-flex">
+          <p class="px-2">Efficacity</p>
+          <% case tractor.speed
+            when 1 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf "></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+            <% when 2 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active "></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+            <% when 3 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+            <% when 4 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i></p>
+            <% when 5 %><p><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i></p>
+            <% end %>
+          </div>
+          <div class="pump-icon d-flex ">
+            <p class="px-2">Consumption</p>
 
-<% @tractors.each do |tractor| %>
-<%=  tractor.title %>
-<% end %>
+            <% case tractor.consumption
+              when 1 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+              <% when 2 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active "></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+              <% when 3 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+              <% when 4 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i></p>
+              <% when 5 %><p><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i></p>
+              <% end %>
+            </div>
+          </div>
+          <div class="total-rental-price px-2">
+            <p>Price<br><%= tractor.price_per_day%>€</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
