@@ -1,79 +1,87 @@
 
 <div class="index-body">
+  <h1 class='pt-5 text-center border-bottom'>All tractors</h1>
   <div class="container">
-    <h1 class='pt-5 text-center' >All tractors</h1>
+    <div class="row px-5">
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-
-
-
-
-
-    <div class="row">
-
-
-
-      <% @tractors.each do |tractor| %>
-      <div class="col-12 col-sm-6 col-md-6">
-        <div class="rounded">
-          <%= link_to tractor do  %>
-          <div class="card m-5">
-            <div class="image-cards" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%= tractor_photo_path(tractor) %>')">
-              <div class="title">
-                <h1> <%= tractor.title %></h1>
+      <!-- START --  TRACTORS -- COLUMN -->
+      <div class="col-8">
+        <div class="row">
+          <% @tractors.each do |tractor| %>
+          <div class="col-12 col-sm-6 col-md-6">
+            <div class="rounded">
+              <%= link_to tractor do  %>
+              <div class="card mt-5">
+                <div class="image-cards" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%= tractor_photo_path(tractor) %>')">
+                  <div class="title">
+                    <h1> <%= tractor.title %></h1>
+                  </div>
+                  <div class="price">
+                    <h2><%= tractor.price_per_day %>€</h2>
+                  </div>
+                  <div class="info">
+                    <!-- START --  TRACTORS -- DESCRIPTION -->
+                    <div class="description">
+                      <h3><%= tractor.description %></h3>
+                      <% case tractor.consumption
+                       when 1 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                       <% when 2 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump "></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                       <% when 3 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
+                       <% when 4 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i></p>
+                       <% when 5 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i></p>
+                       <% end %>
+                       <% case tractor.speed
+                         when 1 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                         <% when 2 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf "></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                         <% when 3 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
+                         <% when 4 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i></p>
+                         <% when 5 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i></p>
+                         <% end %>
+                    </div>
+                    <!-- END --  TRACTORS -- DESCRIPTION -->
+                  </div>
+                </div>
+                  <% end %>
               </div>
-              <div class="price">
-                <h2><%= tractor.price_per_day %>€</h2>
-              </div>
-              <div class="info">
-                <div class="description">
-                  <h3><%= tractor.description %></h3>
-                  <% case tractor.consumption
-                   when 1 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
-                   <% when 2 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump "></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
-                   <% when 3 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i><i class="fas fa-gas-pump"></i></p>
-                   <% when 4 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump"></i></p>
-                   <% when 5 %><p>Consumption : <i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i><i class="fas fa-gas-pump active"></i></p>
-                   <% end %>
-                   <% case tractor.speed
-                     when 1 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
-                     <% when 2 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf "></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
-                     <% when 3 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i><i class="fas fa-leaf"></i></p>
-                     <% when 4 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf"></i></p>
-                     <% when 5 %><p>Efficacity : <i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i><i class="fas fa-leaf active"></i></p>
-                     <% end %>
-                   </div>
-                 </div>
-               </div>
-               <% end %>
-             </div>
-           </div>
-         </div>
-         <% end %>
-       </div>
-
-
-
-
-
-
-        </div>
-        <div class="col-12 col-sm-4 col-md-4">
-          <div class="map mt-5 d-flex justify-content-center">
-            <div
-              class="rounded"
-              id="map"
-              style="width: 100%;
-              height: 600px;"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div>
+            </div>
           </div>
+          <% end %>
         </div>
       </div>
+      <!-- END --  TRACTORS -- COLUMN -->
+
+      <!-- START -- MAP -- COLUMN -->
+      <div class="col-12 col-sm-4 col-md-4">
+        <div class="map mt-5 d-flex justify-content-center">
+          <div
+          class="rounded shadow-sm"
+          id="map"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+        </div>
+      </div>
+      <!-- END -- MAP -- COLUMN -->
+
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
