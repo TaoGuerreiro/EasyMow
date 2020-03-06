@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center user-booking-container">
   <% @bookings.each do |booking|  %>
-    <div class="my-loc d-flex p-2 m-3 shadow rounded align-middle">
+    <div class="my-loc d-flex p-2 m-3 shadow-sm rounded align-middle">
       <%= link_to booking.tractor, class: "booking-link" do  %>
         <%= cl_image_tag booking.tractor.photo.key, height: 200, width: 200, crop: :fill  %>
       <% end %>
