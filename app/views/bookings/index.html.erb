@@ -1,43 +1,35 @@
-<!-- RENTER INDEX OF ALL BOOKING  -->
-
-
-  <div class="index-bookings-body">
-    <div class="abs">
-      <div class="">
-        <div class="d-flex justify-content-center">
-          <% @bookings.each do |booking| %>
-            <div class="my-loc d-flex p-2 m-3 shadow rounded align-middle">
-                <%= link_to booking.tractor, class: "booking-link" do %>
-                  <%= cl_image_tag booking.tractor.photo.key, height: 200, width: 200, crop: :fill %>
-                <% end %>
-                <div class="description-booking px-3">
-                  <h4> <%= booking.tractor.title %></h4>
-                  <div class="d-flex details-rental justify-content-between">
-                    <div class="duration-date">
-                      <p>From <%= booking.starting_date.strftime("%d.%m.%Y")  %>
-                        <i class="fas fa-chevron-circle-right ml-2"></i>
-                        <i class="fas fa-chevron-circle-right mr-2"></i>
-                        <%= booking.ending_date.strftime("%d.%m.%Y")  %>
-                      </p>
-                    </div>
-                    <div class="price-statut-rental d-flex justify-content-between">
-                      <div class="rental-statut d-flex align-items-center">
-                        <% case booking.status
-                            when "Accept"%><i class="far fa-check-square color-green"></i>
-                          <%when "Refuse"%><i class="far fa-times-circle color-red"></i>
-                          <%when "pending"%><div class="text-pending"><h5>Pending</h5></div><span> </span><div class="bounceball"></div>
-                        <% end %>
-                      </div>
-                      <div class="total-rental-price">
-                        <p>Total<br><%= booking.total_price%>€</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<div class="d-flex justify-content-center user-booking-container">
+  <% @bookings.each do |booking|  %>
+    <div class="my-loc d-flex p-2 m-3 shadow rounded align-middle">
+      <%= link_to booking.tractor, class: "booking-link" do  %>
+        <%= cl_image_tag booking.tractor.photo.key, height: 200, width: 200, crop: :fill  %>
+      <% end %>
+      <div class="booking-info d-flex">
+        <div class="description-booking">
+          <h4> <%= booking.tractor.title %></h4>
+        </div>
+        <div class="d-flex details-rental justify-content-between">
+          <div class="duration-date">
+            <p>From <%= booking.starting_date.strftime("%d.%m.%Y")  %>
+              <i class="fas fa-chevron-circle-right ml-2"></i>
+              <i class="fas fa-chevron-circle-right mr-2"></i>
+              <%= booking.ending_date.strftime("%d.%m.%Y")  %>
+            </p>
+          </div>
+          <div class="price-statut-rental d-flex justify-content-between">
+            <div class="rental-statut d-flex align-items-center">
+              <% case booking.status
+                  when "Accept"%><i class="far fa-check-square color-green"></i>
+                <%when "Refuse"%><i class="far fa-times-circle color-red"></i>
+                <%when "pending"%><div class="text-pending"><h5>Pending</h5></div><span> </span><div class="bounceball"></div>
+              <% end %>
+            </div>
+            <div class="total-rental-price">
+              <p>Total<br><%= booking.total_price%>€</p>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
+</div>
